@@ -160,7 +160,6 @@ Ext.define('Ext.ux.grid.feature.Searching', {
   },
 
 	onRender: function() {
-
 		var panel = this.toolbarContainer || this.grid;
 		var tb = 'bottom' === this.position ? panel.getDockedItems('toolbar[dock="bottom"]') : panel.getDockedItems('toolbar[dock="top"]');
 		if(tb.length > 0)
@@ -191,7 +190,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 		});
 
 		// add input field (TwinTriggerField in fact)
-		this.field = Ext.create('Ext.form.TwinTriggerField', {
+		this.field = Ext.create('Ext.form.field.Trigger', {
 			width:this.width,
 			qtip: 'ddd',
 			selectOnFocus:undefined === this.selectOnFocus ? true : this.selectOnFocus,
