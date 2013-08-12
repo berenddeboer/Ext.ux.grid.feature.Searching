@@ -18,10 +18,16 @@ var grid = Ext.create('Ext.grid.Panel', {
     stateId: 'stateGrid',
 	features: [searching],
     columns: [{
-      text     : 'Company',
-      flex     : 1,
-      sortable : false,
-      dataIndex: 'company'
+      text      : 'Company',
+      flex      : 1,
+      sortable  : false,
+      dataIndex : 'company'
+   }, {
+      text      : 'Unsearchable',
+      flex      : 1,
+      sortable  : false,
+      dataIndex : 'unsearchable',
+      searchable: false
    }]
 })`
 

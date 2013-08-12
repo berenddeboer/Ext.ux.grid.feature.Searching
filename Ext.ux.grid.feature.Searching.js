@@ -415,6 +415,11 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 				Ext.each(this.disableIndexes, function(item) {
 					disable = disable ? disable : item === column.dataIndex;
 				});
+        if(!disable) {
+          if(typeof column.searchable != 'undefined' && column.searchable == false) {
+            disable = true;
+          }
+        }
 				if(!disable) {
 					menu.add({
 						xtype: 'menucheckitem',
