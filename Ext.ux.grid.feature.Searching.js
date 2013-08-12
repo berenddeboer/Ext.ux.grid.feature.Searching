@@ -191,9 +191,10 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 
 		// add input field (TwinTriggerField in fact)
 		this.field = Ext.create('Ext.form.field.Trigger', {
-			width:this.width,
+      cls: "grid-search",
+			width: this.width,
 			qtip: 'ddd',
-			selectOnFocus:undefined === this.selectOnFocus ? true : this.selectOnFocus,
+			selectOnFocus: undefined === this.selectOnFocus ? true : this.selectOnFocus,
 			trigger1Cls:'x-form-clear-trigger',
 			trigger2Cls:this.minChars ? 'x-hidden' : 'x-form-search-trigger',
 			onTrigger1Click: Ext.bind(this.onTriggerClear, this),
