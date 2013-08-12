@@ -251,9 +251,8 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 		if(true === this.autoFocus) {
 			this.grid.store.on({scope:this, load:function(){this.field.focus();}});
 		}
-	} // eo function onRender
-	// }}}
-	// {{{
+	}
+
 	/**
 	 * field el keypup event handler. Triggers the search
 	 * @private
@@ -263,9 +262,8 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 		if(0 === length || this.minChars <= length) {
 			this.onTriggerSearch();
 		}
-	} // eo function onKeyUp
-	// }}}
-	// {{{
+	}
+
 	/**
 	 * private Clear Trigger click handler
 	 */
@@ -275,9 +273,8 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 			this.field.focus();
 			this.onTriggerSearch();
 		}
-	} // eo function onTriggerClear
-	// }}}
-	// {{{
+	}
+
 	/**
 	 * private Search Trigger click handler (executes the search, local or remote)
 	 */
@@ -345,39 +342,34 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 			store.load();
 		}
 
-	} // eo function onTriggerSearch
-	// }}}
-	// {{{
+	}
+
 	/**
 	 * @param {Boolean} true to disable search (TwinTriggerField), false to enable
 	 */
 	,setDisabled:function() {
 		this.field.setDisabled.apply(this.field, arguments);
-	} // eo function setDisabled
-	// }}}
-	// {{{
+	}
+
 	/**
 	 * Enable search (TwinTriggerField)
 	 */
 	,enable:function() {
 		this.setDisabled(false);
-	} // eo function enable
-	// }}}
-	// {{{
+	}
+
 	/**
 	 * Enable search (TwinTriggerField)
 	 */
 	,disable:function() {
 		this.setDisabled(true);
-	} // eo function disable
-	// }}}
-	// {{{
+	}
+
 	/**
 	 * private (re)configures the plugin, creates menu items from column model
 	 */
 	,reconfigure:function() {
 
-		// {{{
 		// remove old items
 		var menu = this.menu;
 		menu.removeAll();
@@ -400,8 +392,6 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 			},'-');
 		}
 
-		// }}}
-		// {{{
 		// add new items
 		var columns = this.grid.headerCt.items.items;
 		var group = undefined;
@@ -432,8 +422,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 				}
 			}
 		}, this);
-		// }}}
-		// {{{
+
 		// check items
 		if(this.checkIndexes instanceof Array) {
 			Ext.each(this.checkIndexes, function(di) {
@@ -445,8 +434,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 				}
 			}, this);
 		}
-		// }}}
-		// {{{
+
 		// disable items
 		if(this.readonlyIndexes instanceof Array) {
 			Ext.each(this.readonlyIndexes, function(di) {
@@ -460,7 +448,6 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 		}
 		// }}}
 
-	} // eo function reconfigure
-	// }}}
+	}
 
-}); // eo extend
+});
