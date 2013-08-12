@@ -31,7 +31,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
     alias: 'feature.searching',
 
 	/**
-	 * cfg {Boolean} autoFocus true to try to focus the input field on each store load (defaults to undefined)
+	 * @cfg {Boolean} autoFocus true to try to focus the input field on each store load (defaults to undefined)
 	 */
 
 	/**
