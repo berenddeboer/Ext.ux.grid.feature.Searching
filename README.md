@@ -45,4 +45,4 @@ Based on Ext.ux.grid.Search developed by Ing. Jozef Sakalos.
 
 Converted to Ext 4 by Nathan LeBlanc.
 
-Forum patches applied by Berend de Boer.
+Exclude columns from searchign option by codeart.ch.
