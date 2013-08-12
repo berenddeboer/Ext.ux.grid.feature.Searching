@@ -7,7 +7,7 @@ Search plugin for Ext.grid.Panel.
 Usage
 =====
 
-`var searching = {
+```var searching = {
    ftype: 'searching',
    minChars: 2,
    mode: 'local'
@@ -29,7 +29,7 @@ var grid = Ext.create('Ext.grid.Panel', {
       dataIndex : 'unsearchable',
       searchable: false
    }]
-})`
+})```
 
 
 Links
