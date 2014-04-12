@@ -259,8 +259,9 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 	 */
 	,onKeyUp:function() {
 		var length = this.field.getValue().toString().length;
-		if(0 === length || this.minChars <= length) {
-			this.onTriggerSearch();
+		if (0 === length || this.minChars <= length) {
+      if (!this.last_trigger_search || this.last_trigger_search != this.field.getValue().toString())
+			  this.onTriggerSearch();
 		}
 	}
 
@@ -285,6 +286,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 		var val = this.field.getValue(),
 			store = this.grid.store,
 			proxy = store.getProxy();
+    this.last_trigger_search = val;
 
 		// grid's store filter
 		if('local' === this.mode) {
