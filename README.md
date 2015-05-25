@@ -1,7 +1,7 @@
 Ext.ux.grid.feature.Searching
 =============================
 
-Search plugin for Ext.grid.Panel.
+Search plugin for Ext.grid.Panel. Intended to work with Ext JS 5.
 
 
 Usage
@@ -47,4 +47,4 @@ Based on Ext.ux.grid.Search developed by Ing. Jozef Sakalos.
 
 Converted to Ext 4 by Nathan LeBlanc.
 
-Exclude columns from searchign option by codeart.ch.
+Exclude columns from searching option by codeart.ch.
