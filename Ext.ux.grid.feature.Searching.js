@@ -27,8 +27,11 @@
  */
 
 Ext.define('Ext.ux.grid.feature.Searching', {
-    extend: 'Ext.grid.feature.Feature',
-    alias: 'feature.searching',
+  extend: 'Ext.grid.feature.Feature',
+  alias: 'feature.searching',
+  requires: [
+    "Ext.EventObject",
+  ],
 
 	/**
 	 * @cfg {Boolean} autoFocus true to try to focus the input field on each store load (defaults to undefined)
@@ -119,7 +122,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 	 * @cfg {Object} paramNames Params name map (defaults to {fields:'fields', query:'query'}
 	 */
 	paramNames: {
-		 fields:'fields'
+		fields:'fields'
 		,query:'query'
 	},
 
@@ -184,7 +187,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 
 		// add menu button
 		tb.add({
-			 text:this.searchText
+			text:this.searchText
 			,menu:this.menu
 			,iconCls:this.iconCls
 		});
@@ -216,12 +219,12 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 			}
 
 			// install key map
-			var map = new Ext.KeyMap(this.field.el, [{
-				 key:Ext.EventObject.ENTER
+			var map = new Ext.util.KeyMap(this.field.el, [{
+				key:Ext.EventObject.ENTER
 				,scope:this
 				,fn:this.onTriggerSearch
 			},{
-				 key:Ext.EventObject.ESC
+				key:Ext.EventObject.ESC
 				,scope:this
 				,fn:this.onTriggerClear
 			}]);
@@ -237,7 +240,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 		if(this.shortcutKey && this.shortcutModifier) {
 			var shortcutEl = this.grid.getEl();
 			var shortcutCfg = [{
-				 key:this.shortcutKey
+				key:this.shortcutKey
 				,scope:this
 				,stopEvent:true
 				,fn:function() {
@@ -245,7 +248,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 				}
 			}];
 			shortcutCfg[0][this.shortcutModifier] = true;
-			this.keymap = new Ext.KeyMap(shortcutEl, shortcutCfg);
+			this.keymap = new Ext.util.KeyMap(shortcutEl, shortcutCfg);
 		}
 
 		if(true === this.autoFocus) {
@@ -284,8 +287,8 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 			return;
 		}
 		var val = this.field.getValue(),
-			store = this.grid.store,
-			proxy = store.getProxy();
+		store = this.grid.store,
+		proxy = store.getProxy();
     this.last_trigger_search = val;
 
 		// grid's store filter
@@ -419,7 +422,7 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 						hideOnClick: false,
 						group:group,
 						checked: 'all' === this.checkIndexes,
-						dataIndex: column.dataIndex,
+						dataIndex: column.dataIndex
 					});
 				}
 			}
