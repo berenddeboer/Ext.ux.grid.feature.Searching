@@ -30,7 +30,8 @@ Ext.define('Ext.ux.grid.feature.Searching', {
   extend: 'Ext.grid.feature.Feature',
   alias: 'feature.searching',
   requires: [
-    "Ext.EventObject",
+    "Ext.util.KeyMap",
+    "Ext.event.Event"
   ],
 
 	/**
@@ -220,13 +221,13 @@ Ext.define('Ext.ux.grid.feature.Searching', {
 
 			// install key map
 			var map = new Ext.util.KeyMap(this.field.el, [{
-				key:Ext.EventObject.ENTER
-				,scope:this
-				,fn:this.onTriggerSearch
+				key: Ext.event.Event.ENTER
+				,scope: this
+				,fn: this.onTriggerSearch
 			},{
-				key:Ext.EventObject.ESC
-				,scope:this
-				,fn:this.onTriggerClear
+				key: Ext.event.Event.ESC
+				,scope: this
+				,fn: this.onTriggerClear
 			}]);
 			map.stopEvent = true;
 		}, this, {single:true});
